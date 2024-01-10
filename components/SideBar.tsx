@@ -22,12 +22,7 @@ function MainButtons() {
   return (
     <div className="flex flex-col float-left  w-full h-[145px] items-center mt-3 gap-2 text-white text-[19px] font-bold">
       <ButtonWrapper label="Home" icon={HomeIcon} styleCode="" size={29} />
-      <ButtonWrapper
-        label="Search"
-        icon={SearchIcon}
-        styleCode=""
-        size={29}
-      />
+      <ButtonWrapper label="Search" icon={SearchIcon} styleCode="" size={29} />
       <ButtonWrapper
         label="Your Library"
         icon={Library}
@@ -66,11 +61,26 @@ function PlaylistsInteraction({}) {
   );
 }
 
-const PlaylistText = () =>{
-  let name: Array<string> = ["yeah", "yeah", "yeah", "yeah", "yeah", "yeah", "yeah", "yeah"];
+const PlaylistText = () => {
+  let names: Array<string> = [
+    "FAV",
+    "Daily Mix 1",
+    "Discover Weekly",
+    "Dance / Electronix Mix",
+    "EDM / Popular",
+    "Malayalam",
+  ];
+  const limitedNames = names.slice(0, 7); // Take at most the first 4 elements
+
   return (
-    <ul className="text-white text-[19px] font-bold ">{name.map(name =>  <li key={name}>{name}</li>)}</ul>
-  )
-}
+    <ul className="text-white text-[19px] font-bold w-full flex p-3 flex-col gap-3 ml-2">
+      {limitedNames.map((name, index) => (
+        <li key={index}>
+          <button>{name}</button>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default SideBar;

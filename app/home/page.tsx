@@ -7,11 +7,14 @@ export default function Page() {
     <div className="flex">
       <SideBar/>
       <MainBody />
+      <MusicPlayerStatus/>
     </div>
   );
 }
 const MainBody: React.FC = () => {
-  return <div className="w-[90%] h-[100vh] bg-gradient-to-b from-neutral-800 via-stone-900 to-neutral-900"> </div>;
+  return <div className="w-[90%] h-[100vh] bg-gradient-to-b from-neutral-800 via-stone-900 to-neutral-900"> 
+  <div>23</div>
+  </div>;
 }; 
 
 
