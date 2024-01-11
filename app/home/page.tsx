@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "@/components/SideBar";
 import MusicPlayerStatus from "@/components/MusicStatus";
+import PlaylistCardSmall from "@/components/cards/PlaylistCardSmall";
 
 export default function Page() {
   return (
@@ -13,7 +14,7 @@ export default function Page() {
 }
 const MainBody: React.FC = () => {
   return <div className="w-[90%] h-[100vh] bg-gradient-to-b from-neutral-800 via-stone-900 to-neutral-900"> 
-  <div>23</div>
+  <div>PlaylistCardSmall</div>
   </div>;
 }; 
 
