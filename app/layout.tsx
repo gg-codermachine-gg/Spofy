@@ -21,7 +21,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider session={session}>
-          <main className="w-full h-full">{children}</main>
+          <main className="w-full h-full ">{children}</main>
         </SessionProvider>
       </body>
     </html>

@@ -11,7 +11,7 @@ import ListIcon from "@/public/icons/list-arrow-down.svg";
 
 const MusicPlayerStatus: React.FC = () => {
   return (
-    <div className="absolute w-full h-[93px] bottom-0 bg-neutral-950 flex justify-between">
+    <div className="fixed bottom-0 w-full h-[93px]  bg-neutral-950 flex justify-between">
       <LeftCorner />
       <ControlsMusic />
       <RightCorner />
