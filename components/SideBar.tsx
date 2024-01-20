@@ -10,7 +10,7 @@ import GroupIcon from "@/public/icons/Group.svg";
 
 const SideBar: React.FC = () => {
   return (
-    <div className="w-[20rem] bg-stone-950 flex flex-col gap-3 ">
+    <div className="w-[20rem] bg-stone-950 flex flex-col gap-3 min-h-screen">
       <Logo />
       <MainButtons />
       <PlaylistsInteraction />

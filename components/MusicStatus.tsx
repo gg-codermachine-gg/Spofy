@@ -1,5 +1,7 @@
+"use client"
+
 import Image from "next/image";
-import heartBorder from "@/public/icons/hearBordert.svg";
+import HeartBorder from "@/public/icons/heart";
 import MusicContorlsButton from "./buttons/musicControls";
 import ShuffleIcon from "@/public/icons/shuffle.svg";
 import backWard from "@/public/icons/back.svg";
@@ -8,6 +10,7 @@ import ForwardBtn from "@/public/icons/forward.svg";
 import ReapeatIcon from "@/public/icons/repeat.svg";
 import SoundIcon from "@/public/icons/sound.svg";
 import ListIcon from "@/public/icons/list-arrow-down.svg";
+import pauseIcon from "@/public/icons/stopTrack.svg"
 
 const MusicPlayerStatus: React.FC = () => {
   return (
@@ -21,24 +24,32 @@ const MusicPlayerStatus: React.FC = () => {
 
 const LeftCorner = () => {
   return (
-    <div className="flex flex-row gap-3 items-center">
-      <Image src={heartBorder} width={60} height={60} alt="icon" />
-      <div className="flex flex-col ">
-        <p className="text-white text-[15px] font-norma">Hold On</p>
-        <p className="opacity-60 text-white text-xs font-normal">idl</p>
+    <div className="flex flex-row gap-3 items-center justify-center w-[14rem]">
+      <HeartBorder width={60} height={30} alt="icon" className="" />
+      <div className="flex flex-col  ">
+        <p className="text-white text-[15px] font-norma hover:underline">
+          Hold On
+        </p>
+        <p className="opacity-60 text-white text-xs font-normal hover:underline">
+          idl
+        </p>
       </div>
-      <Image src={heartBorder} width={24} height={25} alt="icon" />
+ 
+      <HeartBorder alt="icon" className="w-4 text-red-600" />
     </div>
   );
 };
 
 const ControlsMusic = () => {
+
+  
+
   return (
     <div className="flex flex-col gap-5 items-center p-2">
       <div className="flex flex-row gap-5">
         <MusicContorlsButton iconSrc={ShuffleIcon} classCode="" />
         <MusicContorlsButton iconSrc={backWard} classCode="" />
-        <MusicContorlsButton iconSrc={PlayBtn} classCode="" />
+        <MusicContorlsButton iconSrc={PlayBtn} pressedIconSrc={pauseIcon} classCode="" />
         <MusicContorlsButton iconSrc={ForwardBtn} classCode="" />
         <MusicContorlsButton iconSrc={ReapeatIcon} classCode="" />
       </div>

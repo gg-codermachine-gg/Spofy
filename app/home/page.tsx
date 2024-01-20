@@ -4,23 +4,37 @@ import MusicPlayerStatus from "@/components/MusicStatus";
 import PlaylistCardSmall from "@/components/cards/PlaylistCardSmall";
 import PlaylistCardLarge from "@/components/cards/PlaylistCardLarge";
 
-const Page: React.FC = () => {
+interface CardData {
+  title?: string;
+  imageUrl?: string;
+  author?: string;
+}
+
+interface PageProps {
+  smallPlaylistCardsData: CardData[];
+  largePlaylistCardsData: CardData[];
+}
+
+const Page: React.FC<PageProps> = ({ smallPlaylistCardsData, largePlaylistCardsData }) => {
   return (
     <div className="flex overflow-auto">
       <SideBar />
-      <MainBody />
+      <MainBody
+        smallPlaylistCardsData={smallPlaylistCardsData}
+        largePlaylistCardsData={largePlaylistCardsData}
+      />
       <MusicPlayerStatus />
     </div>
   );
 };
 
-const MainBody: React.FC = () => {
-  const smallPlaylistCards = Array.from({ length: 8 }, (_, index) => (
-    <PlaylistCardSmall key={index} />
+const MainBody: React.FC<PageProps> = ({ smallPlaylistCardsData, largePlaylistCardsData }) => {
+  const smallPlaylistCards = smallPlaylistCardsData.map((data, index) => (
+    <PlaylistCardSmall key={index} data={data} />
   ));
 
-  const largePlaylistCards = Array.from({ length: 6 }, (_, index) => (
-    <PlaylistCardLarge key={index} />
+  const largePlaylistCards = largePlaylistCardsData.map((data, index) => (
+    <PlaylistCardLarge key={index} data={data} />
   ));
 
   return (

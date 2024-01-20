@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Heart from "@/public/icons/heart"
 
 interface Types {
   label: string;
